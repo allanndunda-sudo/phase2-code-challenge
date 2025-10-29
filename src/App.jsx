@@ -9,7 +9,7 @@ function App() {
 
   // Fetch bots once when the app loads
   useEffect(() => {
-    fetch("http://localhost:3001/bots")
+    fetch("https://json-server-vercel-a6ea.vercel.app/bots")
       .then((res) => res.json())
       .then((data) => setBots(data))
       .catch((error) => console.error("Fetch error:", error));
@@ -41,7 +41,7 @@ function App() {
 
   // Delete bot (frontend + backend)
   function deleteBot(botId) {
-    fetch(`http://localhost:3001/bots/${botId}`, {
+    fetch(`https://json-server-vercel-a6ea.vercel.app/bots/${botId}`, {
       method: "DELETE",
     })
       .then((res) => {
